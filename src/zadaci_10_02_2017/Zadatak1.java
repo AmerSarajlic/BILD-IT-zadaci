@@ -74,6 +74,9 @@ public class Zadatak1 {
 		if(num2 < 2 || num1 > num2){
 			System.out.println("Za trazeni unos nema prostih brojeva !");
 		}
+		else if(numberPerLine < 1){
+			System.out.println("Broj za ispis po liniji mora biti veci od 0 !");
+		}
 		else{
 			
 		System.out.println("Prosti brojevi izmedju (racunajuci i njih): " + num1 + " i: " + num2 + " prikazani sa: "
@@ -82,4 +85,5 @@ public class Zadatak1 {
 		}
 	}
 }
+
 
