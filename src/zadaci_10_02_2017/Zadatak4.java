@@ -3,10 +3,10 @@ package zadaci_10_02_2017;
 import java.util.Scanner;
 
 /*
- * Napisati metodu koja vraæa lokaciju najveæeg elementa u 2D nizu. Metoda
- * treba da koristi sljedeæi header: public static int[ ]
+ * Napisati metodu koja vraÃ¦a lokaciju najveÃ¦eg elementa u 2D nizu. Metoda
+ * treba da koristi sljedeÃ¦i header: public static int[ ]
  * locateLargest(double[ ][ ] a) Napisati test program koji pita korisnika
- * da unese 2D niz te mu ispisuje lokaciju najveæeg elementa u nizu.
+ * da unese 2D niz te mu ispisuje lokaciju najveÃ¦eg elementa u nizu.
  */
 public class Zadatak4 {
 
@@ -55,19 +55,25 @@ public class Zadatak4 {
 				System.out.print("Broj kolona 2D niza: ");
 				int numberOfColumns = input.nextInt();
 				/*
-				 * program nam trazi unos tacnog broja elemenata matrice
+				 * program nam trazi unos tacnog broja elemenata matrice u
+				 * slucaju da su podaci o broju kolona i redova validni
 				 */
-				System.out.println(
-						"Upisite: " + (numberOfColumns * numberOfRows) + " elemenata 2D niza (odvojenih sa space): ");
-				double[][] matrix = new double[numberOfRows][numberOfColumns];
-				for (int row = 0; row < matrix.length; row++) {
-					for (int column = 0; column < matrix[row].length; column++) {
-						matrix[row][column] = input.nextDouble();
+				if (numberOfRows <= 0 || numberOfColumns <= 0) {
+					System.out.println("Brojevi moraju biti pozitivni veci od nule !");
+				} else {
+
+					System.out.println("Upisite: " + (numberOfColumns * numberOfRows)
+							+ " elemenata 2D niza (odvojenih sa space): ");
+					double[][] matrix = new double[numberOfRows][numberOfColumns];
+					for (int row = 0; row < matrix.length; row++) {
+						for (int column = 0; column < matrix[row].length; column++) {
+							matrix[row][column] = input.nextDouble();
+						}
 					}
+					on = false;
+					displayMatrix(matrix);
+					location = locateLargest(matrix);
 				}
-				on = false;
-				displayMatrix(matrix);
-				location = locateLargest(matrix);
 			} catch (Exception e) {
 				System.out.println("Unos nije validan.");
 				input.nextLine();
