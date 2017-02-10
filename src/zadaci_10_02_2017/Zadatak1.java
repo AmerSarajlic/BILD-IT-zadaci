@@ -3,9 +3,9 @@ package zadaci_10_02_2017;
 import java.util.Scanner;
 
 /*
-	 * Napisati metodu koja prima 2 argumenta: poËetni broj i krajnji broj te
-	 * printa sve proste brojeve u zadanom rangu. BONUS: metoda moûe primati i
-	 * treÊi argument, broj brojeva za isprintati po liniji.
+	 * Napisati metodu koja prima 2 argumenta: po√®etni broj i krajnji broj te
+	 * printa sve proste brojeve u zadanom rangu. BONUS: metoda mo≈æe primati i
+	 * tre√¶i argument, broj brojeva za isprintati po liniji.
 	 */
 public class Zadatak1 {
 
@@ -68,9 +68,18 @@ public class Zadatak1 {
 			}
 		}
 		input.close();
+		/*
+		 * prime su pozitivni veci od 1, tako da num2 ne moze bit veci od num1
+		 */
+		if(num2 < 2 || num1 > num2){
+			System.out.println("Za trazeni unos nema prostih brojeva !");
+		}
+		else{
+			
 		System.out.println("Prosti brojevi izmedju (racunajuci i njih): " + num1 + " i: " + num2 + " prikazani sa: "
 				+ numberPerLine + " u redu su: \n");
 		displayPrimes(num1, num2, numberPerLine);
+		}
 	}
-
 }
+
