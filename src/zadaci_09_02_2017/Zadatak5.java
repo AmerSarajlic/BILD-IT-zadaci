@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 /*
  * Napisati metodu koja prima jedan argument te simulira 
- * bacanje novËiÊa toliko puta. 
- * Nakon öto se simulacija zavröi, program ispisuje 
- * koliko puta je novËiÊ pokazao glavu a koliko puta pismo.
+ * bacanje nov√®i√¶a toliko puta. 
+ * Nakon ≈°to se simulacija zavr≈°i, program ispisuje 
+ * koliko puta je nov√®i√¶ pokazao glavu a koliko puta pismo.
  */
 public class Zadatak5 {
 
@@ -36,6 +36,9 @@ public class Zadatak5 {
 			try {
 				System.out.print("Upisite koliko puta se baca novcic: ");
 				number = input.nextInt();
+				if(number < 0){
+					System.out.print("Broj bacanja ne moze biti negativan !");
+				}
 				on = false;
 			} catch (Exception e) {
 				System.out.println("Pogresan unos. Unos mora biti cijeli broj !");
@@ -46,9 +49,12 @@ public class Zadatak5 {
 		/*
 		 * ispis rezultata bacanja novcica
 		 */
-		int head = numberOfHeads(number);
-		System.out.println("\nNovici je bacen: " + number + " puta, a pokazao je: " + head + " puta glavu i "
-				+ (number - head) + " puta pismo. ");
+		if (number < 0) {
+			System.out.println("Broj bacanja ne moze biti negativan !");
+		} else {
+			int head = numberOfHeads(number);
+			System.out.println("\nNovici je bacen: " + number + " puta, a pokazao je: " + head + " puta glavu i "
+					+ (number - head) + " puta pismo. ");
+		}
 	}
-
 }
