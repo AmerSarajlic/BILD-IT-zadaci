@@ -40,7 +40,7 @@ public class Zadatak3 {
 				}
 			}
 		} catch (Exception e) {
-			System.out.println("Unos nije validan. ");
+			System.out.println("Unos nije validan ! ");
 			input.nextLine();
 		}
 		input.close();
