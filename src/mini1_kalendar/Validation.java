@@ -18,12 +18,15 @@ public class Validation {
 	 */
 	public static boolean isValidDayMonth(String date) {
 		Calendar calendar = new Calendar();
-		String[] dateArray = date.split("/");
-		int day = Integer.parseInt(dateArray[0]);
-		int month = Integer.parseInt(dateArray[1]);
-		int year = Integer.parseInt(dateArray[2]);
+		if(isValidDate(date)){
+			String[] dateArray = date.split("/");
+			int day = Integer.parseInt(dateArray[0]);
+			int month = Integer.parseInt(dateArray[1]);
+			int year = Integer.parseInt(dateArray[2]);
+			
 		if (calendar.getNumberOfDaysInAMonth(month, year) >= day && day > 0 && isValidMonth(month)) {
 			return true;
+			}
 		}
 		return false;
 	}
@@ -38,7 +41,7 @@ public class Validation {
 		if (date.length() != 10) {
 			return false;
 		}
-		if (date.charAt(2) != '/' && date.charAt(4) != '/') {
+		if (date.charAt(2) != '/' && date.charAt(5) != '/') {
 			return false;
 		}
 

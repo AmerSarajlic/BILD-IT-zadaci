@@ -40,35 +40,43 @@ public class Main {
 
 				}
 			}
-			System.out.println();
-			switch (option) {
-			case 1:
-				calendar.calendarForSpecificDate(input);
+			try {
+
+				System.out.println();
+				switch (option) {
+				case 1:
+					calendar.calendarForSpecificDate(input);
+					displayMainMenu();
+					break;
+				case 2:
+					notes.addNote(input);
+					displayMainMenu();
+					break;
+				case 3:
+					notes.readAllNotes();
+					displayMainMenu();
+					break;
+				case 4:
+					notes.readNotesForSpecificDate(input);
+					displayMainMenu();
+					break;
+				case 5:
+					System.out.println("Loging off...");
+					on = false;
+					input.nextLine();
+					break;
+				default:
+					System.out.println("Invalid command. Input 1-5: ");
+					displayMainMenu();
+					break;
+				}
+			} catch (Exception e) {
+				System.out.println("Invalid input !");
 				displayMainMenu();
-				break;
-			case 2:
-				notes.addNote(input);
-				displayMainMenu();
-				break;
-			case 3:
-				notes.readAllNotes();
-				displayMainMenu();
-				break;
-			case 4:
-				notes.readNotesForSpecificDate(input);
-				displayMainMenu();
-				break;
-			case 5:
-				System.out.println("Loging off...");
-				on = false;
 				input.nextLine();
-				break;
-			default:
-				System.out.println("Invalid command. Input 1-5: ");
-				displayMainMenu();
-				break;
 			}
 		}
+
 		input.close();
 	}
 }
