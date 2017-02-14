@@ -23,9 +23,9 @@ public class Zadatak3 {
 		String str2 = "";
 		try {
 			System.out.print("Upisite prvi string: ");
-			str1 = input.nextLine();
+			str1 = input.nextLine().toLowerCase();
 			System.out.print("Upisite drugi string: ");
-			str2 = input.nextLine();
+			str2 = input.nextLine().toLowerCase();
 			if (str1.charAt(0) != str2.charAt(0)) {
 				System.out.println("Nema zajednicki prefiks !");
 			} else {
