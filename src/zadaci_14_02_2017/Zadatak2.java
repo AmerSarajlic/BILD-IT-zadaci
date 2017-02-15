@@ -16,12 +16,13 @@ public class Zadatak2 {
 	/**
 	 * metoda koja ispisuje prestupne godine
 	 * 
-	 * @param start pocetna godina
-	 * @param end krajnja godina
+	 * @param start
+	 *            pocetna godina
+	 * @param end
+	 *            krajnja godina
 	 */
 	public static void displayLeap(int start, int end) {
 		int counter = 0;
-		System.out.println("\nPrestupne godine u rasponu: " + start + " : " + end + " su:\n");
 		for (int year = start; year <= end; year++) {
 			if (isLeap(year)) {
 				System.out.print(year + " ");
@@ -31,12 +32,16 @@ public class Zadatak2 {
 				}
 			}
 		}
+		if (counter < 1) {
+			System.out.println("Nema prestupnih godina u tom periodu. ");
+		}
 	}
 
 	/**
 	 * metoda koja provjerava da li je godina prestupna
 	 * 
-	 * @param year godina
+	 * @param year
+	 *            godina
 	 * @return true ako je prestupna, false ako nije
 	 */
 	public static boolean isLeap(int year) {
