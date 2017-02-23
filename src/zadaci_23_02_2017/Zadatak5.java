@@ -19,8 +19,8 @@ public class Zadatak5 {
 
 			System.out.print("Unesite broj linija: ");
 			int number = input.nextInt();
-			if (number < 2) {
-				System.out.println("Upisite broj veci od 1 !");
+			if (number < 2 || number > 100) {
+				System.out.println("Upisite broj veci od 1, a manji od 100 !");
 			} else {
 
 				for (int i = 1; i <= number; i++) {
