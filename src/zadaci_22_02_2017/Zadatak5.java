@@ -32,8 +32,8 @@ public class Zadatak5 {
 			System.out.print("Upisite broj: ");
 
 			number = input.nextInt();
-			if (number <= 1) {
-				System.out.println("Upisite broj veci od 1 ! ");
+			if (number <= 1 || number > 100) {
+				System.out.println("Upisite broj veci od 1, a manji od 100 ! ");
 			} else {
 				print(number);
 			}

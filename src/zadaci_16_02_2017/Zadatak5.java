@@ -23,7 +23,7 @@ public class Zadatak5 {
 		long secondNumber = secondTotal % 60;
 		long minutesTotal = secondTotal / 60;
 		long minutesNumber = minutesTotal % 60;
-		long hoursTotal = minutesNumber / 60;
+		long hoursTotal = minutesTotal / 60;
 		return hoursTotal + ":" + minutesNumber + ":" + secondNumber;
 	}
 
